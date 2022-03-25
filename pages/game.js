@@ -320,7 +320,7 @@ export default function PrimarySearchAppBar() {
                       // 16:9
                       pt: "56.25%"
                     }}
-                    image="https://source.unsplash.com/random"
+                    image="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/League_of_Legends_2019_vector.svg/220px-League_of_Legends_2019_vector.svg.png"
                     alt="random"
                   />
                   <CardContent sx={{ flexGrow: 1 }}>

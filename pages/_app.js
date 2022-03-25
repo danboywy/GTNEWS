@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import React from "react";
 import { ThemeProvider, useTheme, createTheme } from "@mui/material/styles";
-
+import Layout from "../components/Layout";
 const theme = createTheme({
   palette: {
     mode: "dark"
@@ -17,7 +17,11 @@ function MyApp({ Component, pageProps }) {
     }
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
 
 export default MyApp;

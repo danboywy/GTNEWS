@@ -5,7 +5,9 @@
   background-color: #212121;
 }
 .meum_bar {
+  background-color: #212121;
   font-family: "Lobster", cursive;
+  color: white;
 }
 .gtnews_logo {
   font-size: 0px;
@@ -20,6 +22,7 @@
 }
 
 .game,
+.datetime,
 .favorite,
 .notice,
 .account,
