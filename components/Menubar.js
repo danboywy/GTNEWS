@@ -56,7 +56,7 @@ export default function Menubar({ check, change }) {
             justifyContent="center"
           >
             <div className={styles.tech}>
-              <Link href="/tech">
+              <Link href="/techNews">
                 <PublicOutlinedIcon sx={{ color: "#2196f3", fontSize: 50 }} />
               </Link>
               <br></br>
