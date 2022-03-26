@@ -1,12 +1,8 @@
 import "../styles/globals.css";
-import React from "react";
-import { ThemeProvider, useTheme, createTheme } from "@mui/material/styles";
-import Layout from "../components/Layout";
-const theme = createTheme({
-  palette: {
-    mode: "dark"
-  }
-});
+import React, { useState } from "react";
+import { createTheme, ThemeProvider } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
+import Menubar from "../components/Menubar";
 
 function MyApp({ Component, pageProps }) {
   React.useEffect(() => {
@@ -17,10 +13,22 @@ function MyApp({ Component, pageProps }) {
     }
   }, []);
 
+  // Darkmode
+  const [darkMode, setDarkMode] = useState(false);
+  const theme = createTheme({
+    palette: {
+      type: darkMode ? "dark" : "light"
+    }
+  });
+
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ThemeProvider theme={theme}>
+      <Paper style={{ height: "100vh" }}>
+        <Menubar check={darkMode} change={() => setDarkMode(!darkMode)} />
+
+        <Component {...pageProps} />
+      </Paper>
+    </ThemeProvider>
   );
 }
 

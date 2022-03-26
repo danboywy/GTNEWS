@@ -13,9 +13,11 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import Switch from "@mui/material/Switch";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
-export default function Menubar() {
+
+export default function Menubar({ check, change }) {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenUserMenu = (event) => {
@@ -39,8 +41,12 @@ export default function Menubar() {
               ></img>
             </div>
           </Grid>
-          <Grid item md={4.5} lg={5.5} container alignItems="center">
+          <Grid item md={3.5} lg={4.5} container alignItems="center">
             <Datetime />
+          </Grid>
+          <Grid item xs={1} container alignItems="center">
+            <Switch checked={check} onChange={change} />
+            <span className={styles.switchtext}>Dark mode</span>
           </Grid>
           <Grid
             item
@@ -106,39 +112,38 @@ export default function Menubar() {
             container
             alignItems="center"
             justifyContent="center"
-          ><IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-            <div className={styles.account}>
-            
-              <AccountCircleOutlinedIcon
-                sx={{ color: "#2196f3", fontSize: 50 }}
-              />
-               
-              <br></br>
-              <span className={styles.iconaccounttext}>Account</span>
-            </div>
+          >
+            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <div className={styles.account}>
+                <AccountCircleOutlinedIcon
+                  sx={{ color: "#2196f3", fontSize: 50 }}
+                />
+                <br></br>
+                <span className={styles.iconaccounttext}>Account</span>
+              </div>
             </IconButton>
             <Menu
-            sx={{ mt: "80px" }}
-            id="menu-appbar"
-            anchorEl={anchorElUser}
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "right"
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "right"
-            }}
-            open={Boolean(anchorElUser)}
-            onClose={handleCloseUserMenu}
-          >
-            {settings.map((setting) => (
-              <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                <Typography textAlign="center">{setting}</Typography>
-              </MenuItem>
-            ))}
-          </Menu>
+              sx={{ mt: "80px" }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right"
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right"
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {settings.map((setting) => (
+                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">{setting}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
           </Grid>
         </Grid>
       </Box>

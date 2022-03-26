@@ -1,13 +1,9 @@
 .main {
   font-family: "Lobster", cursive;
-  color: black;
   height: 100vh;
-  background-color: #212121;
 }
 .meum_bar {
-  background-color: #212121;
   font-family: "Lobster", cursive;
-  color: white;
 }
 .gtnews_logo {
   font-size: 0px;
@@ -21,15 +17,17 @@
   display: block;
 }
 
+.menu-appbar,
 .game,
 .datetime,
 .favorite,
 .notice,
 .account,
+.setting,
 .tech {
-  color: white;
   text-align: center;
   font-size: 20px;
   justify-content: center;
   align-items: center;
+  font-family: "Lobster", cursive;
 }
