@@ -3,9 +3,7 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import * as React from "react";
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-</style>;
+
 
 export default function Home() {
   return (
