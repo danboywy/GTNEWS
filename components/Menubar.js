@@ -9,7 +9,22 @@ import Grid from "@mui/material/Grid";
 import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
 import AddAlarmIcon from "@mui/icons-material/AddAlarm";
 import Datetime from "./Datetime";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+
+const settings = ["Profile", "Account", "Dashboard", "Logout"];
 export default function Menubar() {
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
   return (
     <div className={styles.meum_bar}>
       <Box sx={{ mx: "auto" }}>
@@ -91,14 +106,39 @@ export default function Menubar() {
             container
             alignItems="center"
             justifyContent="center"
-          >
+          ><IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
             <div className={styles.account}>
+            
               <AccountCircleOutlinedIcon
                 sx={{ color: "#2196f3", fontSize: 50 }}
               />
+               
               <br></br>
               <span className={styles.iconaccounttext}>Account</span>
             </div>
+            </IconButton>
+            <Menu
+            sx={{ mt: "80px" }}
+            id="menu-appbar"
+            anchorEl={anchorElUser}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right"
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right"
+            }}
+            open={Boolean(anchorElUser)}
+            onClose={handleCloseUserMenu}
+          >
+            {settings.map((setting) => (
+              <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <Typography textAlign="center">{setting}</Typography>
+              </MenuItem>
+            ))}
+          </Menu>
           </Grid>
         </Grid>
       </Box>
