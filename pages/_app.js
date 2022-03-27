@@ -1,4 +1,3 @@
-import "../styles/globals.css";
 import React, { useState } from "react";
 import { createTheme, ThemeProvider } from "@material-ui/core";
 import { Paper } from "@material-ui/core";

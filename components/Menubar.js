@@ -71,7 +71,7 @@ export default function Menubar({ check, change }) {
             justifyContent="center"
           >
             <div className={styles.game}>
-              <Link href="/game">
+              <Link href="/gameNews">
                 <SportsEsportsOutlinedIcon
                   sx={{ color: "#2196f3", fontSize: 50 }}
                 />
