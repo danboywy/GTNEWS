@@ -5,12 +5,12 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import FavoriteBorderRounded from "@material-ui/icons/FavoriteBorderRounded";
-import Share from "@material-ui/icons/Share";
+import IconButton from "@mui/material/IconButton";
+import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
+import ShareIcon from '@mui/icons-material/Share';
 import Box from "@material-ui/core/Box";
 import { ThumbUp } from "@mui/icons-material";
-import { Container, Icon } from "@mui/material";
+import { Container } from "@mui/material";
 //import { Link } from 'react-router-dom';
 
 export default function NewsCard(props) {
@@ -49,10 +49,10 @@ export default function NewsCard(props) {
             </IconButton>
 
             <IconButton>
-              <Share />
+              <ShareIcon />
             </IconButton>
             <IconButton>
-              <FavoriteBorderRounded />
+              <FavoriteBorderRoundedIcon />
             </IconButton>
             <Button sx={{ left: 20 }} href={props.link} target="_blank">
               {" "}
