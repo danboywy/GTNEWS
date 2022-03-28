@@ -33,13 +33,15 @@ export default function Menubar({ check, change }) {
         <Grid item xs={12} container>
           <Grid item xs={0.5} container></Grid>
           <Grid item md={2} lg={1} container alignItems="center">
-            <div className={styles.gtnews_logo}>
-              <img
-                className={styles.gtnewslogo}
-                src="GTNEWS.png"
-                alt="GTNews"
-              ></img>
-            </div>
+            <Link href="/mainpage">
+              <div className={styles.gtnews_logo}>
+                <img
+                  className={styles.gtnewslogo}
+                  src="GTNEWS.png"
+                  alt="GTNews"
+                ></img>
+              </div>
+            </Link>
           </Grid>
           <Grid item md={3.5} lg={4.5} container alignItems="center">
             <Datetime />
@@ -60,7 +62,9 @@ export default function Menubar({ check, change }) {
                 <PublicOutlinedIcon sx={{ color: "#2196f3", fontSize: 50 }} />
               </Link>
               <br></br>
-              <span className={styles.icontechtext}>Tech</span>
+              <Link href="/techNews">
+                <span className={styles.icontechtext}>Tech</span>
+              </Link>
             </div>
           </Grid>
           <Grid
@@ -77,7 +81,9 @@ export default function Menubar({ check, change }) {
                 />
               </Link>
               <br></br>
-              <span className={styles.icongametext}>Game</span>
+              <Link href="/gameNews">
+                <span className={styles.icongametext}>Game</span>
+              </Link>
             </div>
           </Grid>
           <Grid

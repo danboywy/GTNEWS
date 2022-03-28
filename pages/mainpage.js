@@ -13,7 +13,11 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1 className="title">
-          <Link href="/mainpage">Welcome Page</Link>
+          <Link href="/signIn">Login test</Link>
+          <br />
+          <Link href="/testimport">Test creating a component</Link>
+          <br />
+          <Link href="/accountSettings">accountSetting</Link>
         </h1>
       </main>
     </div>
