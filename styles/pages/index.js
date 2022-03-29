@@ -3,6 +3,10 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import * as React from "react";
 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+</style>;
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -13,7 +17,9 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1 className="title">
-          <Link href="/mainpage">Welcome Page</Link>
+          <Link href="/signIn">Login test</Link>
+          <br />
+          <Link href="/testimport">Test creating a component</Link>
         </h1>
       </main>
     </div>
