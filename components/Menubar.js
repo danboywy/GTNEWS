@@ -14,11 +14,16 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Switch from "@mui/material/Switch";
+import {useContext} from 'react'
+import AuthContext from '../stores/authContext'
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 export default function Menubar({ check, change }) {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const {user, login}=useContext(AuthContext)
+ 
+
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -125,7 +130,7 @@ export default function Menubar({ check, change }) {
                   sx={{ color: "#2196f3", fontSize: 50 }}
                 />
                 <br></br>
-                <span className={styles.iconaccounttext}>Account</span>
+                <span onClick={login} className={styles.iconaccounttext}>Account</span>
               </div>
             </IconButton>
             <Menu
